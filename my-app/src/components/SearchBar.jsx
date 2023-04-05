@@ -11,11 +11,11 @@ const SearchBar = ({ setResults }) => {
     fetch(input)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
+        // console.log(json);
         const results = json.meals.filter((meal) => {
           return value && meal && meal.strMeal.toLowerCase();
         });
-        console.log(results)
+        // console.log(results)
         setResults(results);
       });
   };
