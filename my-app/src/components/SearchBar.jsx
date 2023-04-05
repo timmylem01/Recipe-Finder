@@ -7,14 +7,16 @@ const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    const input = `https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`;
+    fetch(input)
       .then((response) => response.json())
       .then((json) => {
-        const results = json.filter((user) => {
-          return value && user && user.name.toLowerCase().includes(value);
+        console.log(json);
+        const results = json.meals.filter((meal) => {
+          return value && meal && meal.strMeal.toLowerCase();
         });
+        console.log(results)
         setResults(results);
-        // console.log(results)
       });
   };
 
@@ -27,7 +29,7 @@ const SearchBar = ({ setResults }) => {
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
       <input
-        placeholder="Enter Recipe Name"
+        placeholder="Enter Ingredient"
         value={input}
         onChange={(e) => handleChange(e.target.value)}
       />
