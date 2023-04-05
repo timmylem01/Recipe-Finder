@@ -7,11 +7,11 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <ul>
-          <li>
+        <ul className="navbar">
+          <li className="navbar-li">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="navbar-li">
             <Link to="/bookmarks">Bookmarks</Link>
           </li>
         </ul>
