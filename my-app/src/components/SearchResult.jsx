@@ -9,7 +9,7 @@ const SearchResult = ({ result }) => {
     <div
       className="search-result"
     >
-      <Card result={result} />
+      <Card key={result.idMeal} result={result} />
     </div>
   );
 };
