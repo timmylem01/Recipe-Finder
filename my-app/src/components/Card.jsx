@@ -1,31 +1,37 @@
 import React, { useState } from "react";
-
 import Modal from "./Modal.jsx";
-// import styled from "styled-components";
-
 import "./Card.css";
-import { useEffect } from "react";
 
-const Card = ({ result }) => {
+const Card = ({ result, displayDelete, setBookmark, allStorage }) => {
   // console.log(result);
-  const [bookmark, setBookmark] = useState([]);
   const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    localStorage.setItem(`${bookmark.idMeal}`, JSON.stringify(bookmark))
-  }, [bookmark]);
-
-  const handleChange = (result) => {
-    setBookmark(result);
+  const handleChange = (result, string) => {
+    if (string === "bookmark") {
+      localStorage.setItem(`${result.idMeal}`, JSON.stringify(result));
+    } else {
+      localStorage.removeItem(`${result.idMeal}`);
+      setBookmark(allStorage());
+    }
   };
 
   const ingredients = [];
   for (const key in result) {
-    if (key.includes("strIngredient") && result[key] !== "" && result[key] !== null) {
+    if (
+      key.includes("strIngredient") &&
+      result[key] !== "" &&
+      result[key] !== null
+    ) {
       ingredients.push(result[key]);
     }
   }
   // console.log(ingredients);
+  const bookmarkButton = (
+    <button onClick={() => handleChange(result, "bookmark")}>Bookmark</button>
+  );
+  const deleteButton = (
+    <button onClick={() => handleChange(result, "delete")}>Delete</button>
+  );
 
   return (
     <div className="recipe-card">
@@ -34,26 +40,26 @@ const Card = ({ result }) => {
       <p>Cuisine: {result.strArea}</p>
       <div className="button-container">
         <button onClick={() => setShow(true)}>Show Recipe</button>
-        <button onClick={() => handleChange(result)}>Bookmark</button>
+        {/* if both are true, then display delete button */}
+        {/* if displayDelete is false then display bookmark button */}
+        {displayDelete ? deleteButton : bookmarkButton}
       </div>
       <Modal title={result.strMeal} onClose={() => setShow(false)} show={show}>
         <section className="recipe-info">
-          Ingredients: 
+          Ingredients:
           <ul>
-            {
-              ingredients.map(x => {
-                return <li> {x} </li>
-              })
-            }
+            {ingredients.map((x) => {
+              return <li> {x} </li>;
+            })}
           </ul>
         </section>
         <section className="recipe-info">
-          Instructions: 
+          Instructions:
           <p>{result.strInstructions}</p>
         </section>
       </Modal>
     </div>
-  )
-}
+  );
+};
 
 export default Card;
