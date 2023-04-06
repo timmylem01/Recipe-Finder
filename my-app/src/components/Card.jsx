@@ -21,7 +21,7 @@ const Card = ({ result }) => {
 
   const ingredients = [];
   for (const key in result) {
-    if (key.includes("strIngredient") && result[key] !== "") {
+    if (key.includes("strIngredient") && result[key] !== "" && result[key] !== null) {
       ingredients.push(result[key]);
     }
   }
@@ -42,9 +42,7 @@ const Card = ({ result }) => {
           <ul>
             {
               ingredients.map(x => {
-                if (x !== null) {
-                  return <li> {x} </li>
-                }
+                return <li> {x} </li>
               })
             }
           </ul>
