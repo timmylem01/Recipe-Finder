@@ -22,6 +22,8 @@
 .recipe-info {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  max-height: 22em;
 }
 
 img {

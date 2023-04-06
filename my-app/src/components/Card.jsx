@@ -25,6 +25,7 @@ const Card = ({ result }) => {
       ingredients.push(result[key]);
     }
   }
+  console.log(ingredients);
 
   return (
     <div className="recipe-card">
@@ -41,7 +42,9 @@ const Card = ({ result }) => {
           <ul>
             {
               ingredients.map(x => {
-                return <li> {x} </li>
+                if (x !== null) {
+                  return <li> {x} </li>
+                }
               })
             }
           </ul>
