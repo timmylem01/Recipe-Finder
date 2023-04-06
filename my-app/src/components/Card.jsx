@@ -25,7 +25,7 @@ const Card = ({ result }) => {
       ingredients.push(result[key]);
     }
   }
-  console.log(ingredients);
+  // console.log(ingredients);
 
   return (
     <div className="recipe-card">

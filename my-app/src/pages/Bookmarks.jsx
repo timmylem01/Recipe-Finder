@@ -19,7 +19,17 @@ const Bookmarks = () => {
   const parsed = [];
 
   for ( let i = 0; i < values.length; i++) {
+    
+    /* 
+      For some reason on my window's pc, my local storage has a loglevel key.
+      It did not appear while working on my Macbook.
+      The conditional statement below fixes the bug but the original line of code
+      I had was on line 32.
+    */
+    if (values[i] !== "INFO") {
       parsed.push(JSON.parse(values[i]));
+    }
+    // parsed.push(JSON.parse(values[i]));
   }
 
   // console.log(parsed);
