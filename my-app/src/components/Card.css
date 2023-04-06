@@ -3,16 +3,25 @@
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  width: 300px;
-  height: 300px;
+  width: 20em;
+  height: 20em;
   border: solid;
   border-radius: 2em;
-  border-color: #6087db;;
+  border-color: #6087db;
   margin: 1em;
   color: black;
   background-color: #D7E3FC;
   box-shadow: 10px 5px 5px gainsboro;
   /* overflow-y: scroll; */
+}
+
+.card-title {
+  text-align: center;
+}
+
+.recipe-info {
+  display: flex;
+  flex-direction: column;
 }
 
 img {

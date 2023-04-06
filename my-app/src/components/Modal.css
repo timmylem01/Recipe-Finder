@@ -28,8 +28,10 @@
 }
 
 .modal-content {
+  display: flex;
+  flex-direction: column;
   width: 500px;
-  background-color: #fff;
+  background-color: #D7E3FC;
   transform: translateY(-200px);
   transition: all 0.3s ease-in-out;
 }
@@ -48,6 +50,8 @@
 
 .modal-header, .modal-footer {
   padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .modal-title {

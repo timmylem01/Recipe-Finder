@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Modal from "./Modal.jsx";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 import "./Card.css";
 import { useEffect } from "react";
@@ -28,7 +28,7 @@ const Card = ({ result }) => {
 
   return (
     <div className="recipe-card">
-      <h2>{result.strMeal}</h2>
+      <h3 className="card-title">{result.strMeal}</h3>
       <img src={result.strMealThumb} alt={result.strMeal}></img>
       <p>Cuisine: {result.strArea}</p>
       <div className="button-container">
@@ -36,7 +36,8 @@ const Card = ({ result }) => {
         <button onClick={() => handleChange(result)}>Bookmark</button>
       </div>
       <Modal title={result.strMeal} onClose={() => setShow(false)} show={show}>
-        <p>Ingredients: 
+        <section className="recipe-info">
+          Ingredients: 
           <ul>
             {
               ingredients.map(x => {
@@ -44,12 +45,11 @@ const Card = ({ result }) => {
               })
             }
           </ul>
-        </p>
-        <p>
+        </section>
+        <section className="recipe-info">
           Instructions: 
-          <br></br>
-          {result.strInstructions}
-        </p>
+          <p>{result.strInstructions}</p>
+        </section>
       </Modal>
     </div>
   )

@@ -1,21 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-
 import Card from "../components/Card";
+import "./Bookmarks.css";
 
 const Bookmarks = () => {
-
-  // const [bookmarks, setBookmarks] = useState([]);
-
-  // useEffect(() => {
-  //   const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    
-  //   if(bookmarks) {
-  //     setBookmarks(bookmarks);
-  //   }
-  // }, []);
-
   const values = [];
   function allStorage() {
     let keys = Object.keys(localStorage);
@@ -38,11 +25,18 @@ const Bookmarks = () => {
   console.log(parsed);
 
   return (
-    parsed.map(x => {
-      if (x.length !== 0) {
-        return <Card key={x.idMeal} result={x} />
-      }
-    })
+    <div className="bookmarks-main">
+      <h1>Bookmarks</h1>
+      <div className="bookmark-display">
+        {
+          parsed.map(x => {
+            if (x.length !== 0) {
+              return <Card key={x.idMeal} result={x} />
+            }
+          })
+        }
+      </div>
+    </div>
   )
 };
 
