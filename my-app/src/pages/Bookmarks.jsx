@@ -22,7 +22,7 @@ const Bookmarks = () => {
       parsed.push(JSON.parse(values[i]));
   }
 
-  console.log(parsed);
+  // console.log(parsed);
 
   return (
     <div className="bookmarks-main">

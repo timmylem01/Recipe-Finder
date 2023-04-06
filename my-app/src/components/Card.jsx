@@ -7,7 +7,7 @@ import "./Card.css";
 import { useEffect } from "react";
 
 const Card = ({ result }) => {
-  console.log(result);
+  // console.log(result);
   const [bookmark, setBookmark] = useState([]);
   const [show, setShow] = useState(false);
 
