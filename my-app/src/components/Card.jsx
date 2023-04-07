@@ -30,7 +30,7 @@ const Card = ({ result, displayDelete, setBookmark, allStorage }) => {
     <button className="bookmark-button" onClick={() => handleChange(result, "bookmark")}>Bookmark</button>
   );
   const deleteButton = (
-    <button className="delete-button" onClick={() => handleChange(result, "delete")}>Delete</button>
+    <button className="delete-button" onClick={() => handleChange(result, "delete")}>Remove</button>
   );
 
   return (
