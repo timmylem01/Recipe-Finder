@@ -2,9 +2,12 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  /* position: fixed; */
+  width: 100%;
+  top: 0;
+  left: 0;
   overflow: hidden;
   background-color: #6087db;
-  width: 100%;
 }
 
 .navbar-li {

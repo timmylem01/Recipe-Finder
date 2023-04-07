@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  width: 20em;
-  height: 20em;
+  width: 20rem;
+  height: 20rem;
   border: solid;
   border-radius: 2em;
   border-color: #6087db;
@@ -12,11 +12,16 @@
   color: black;
   background-color: #D7E3FC;
   box-shadow: 10px 5px 5px gainsboro;
-  /* overflow-y: scroll; */
+  padding: 0.8rem;
 }
 
 .card-title {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  font-size: 1.2vw;
 }
 
 .recipe-info {
@@ -26,7 +31,53 @@
   max-height: 22em;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.styled-button {
+  border-radius: .5rem;
+  font-size: 0.9vw;
+  color: #D7E3FC;
+  margin: .2rem;
+  height: 2.2rem;
+  width: 6rem;
+  background-color: #6087db;
+  border-color: #D7E3FC;
+}
+
+.bookmark-button {
+  border-radius: .5rem;
+  font-size: 0.9vw;
+  color: #D7E3FC;
+  margin: .2rem;
+  height: 2.2rem;
+  width: 6rem;
+  background-color: #4caa76;
+  border-color: #D7E3FC;
+}
+
+.delete-button {
+  border-radius: .5rem;
+  font-size: 0.9vw;
+  color: #D7E3FC;
+  margin: .2rem;
+  height: 2.2rem;
+  width: 6rem;
+  background-color: #db4c4c;
+  border-color: #D7E3FC;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 img {
   height: 10em;
   width: 10em;
+  border-radius: .5rem;
+  border: solid;
+  border-color: #688cdb;
 }

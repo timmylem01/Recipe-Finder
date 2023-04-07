@@ -27,10 +27,10 @@ const Card = ({ result, displayDelete, setBookmark, allStorage }) => {
   }
   // console.log(ingredients);
   const bookmarkButton = (
-    <button onClick={() => handleChange(result, "bookmark")}>Bookmark</button>
+    <button className="bookmark-button" onClick={() => handleChange(result, "bookmark")}>Bookmark</button>
   );
   const deleteButton = (
-    <button onClick={() => handleChange(result, "delete")}>Delete</button>
+    <button className="delete-button" onClick={() => handleChange(result, "delete")}>Delete</button>
   );
 
   return (
@@ -39,14 +39,14 @@ const Card = ({ result, displayDelete, setBookmark, allStorage }) => {
       <img src={result.strMealThumb} alt={result.strMeal}></img>
       <p>Cuisine: {result.strArea}</p>
       <div className="button-container">
-        <button onClick={() => setShow(true)}>Show Recipe</button>
+        <button className="styled-button" onClick={() => setShow(true)}>Show Recipe</button>
         {/* if both are true, then display delete button */}
         {/* if displayDelete is false then display bookmark button */}
         {displayDelete ? deleteButton : bookmarkButton}
       </div>
       <Modal title={result.strMeal} onClose={() => setShow(false)} show={show}>
         <section className="recipe-info">
-          Ingredients:
+          <h4>Ingredients:</h4>
           <ul>
             {ingredients.map((x) => {
               return <li> {x} </li>;
@@ -54,7 +54,7 @@ const Card = ({ result, displayDelete, setBookmark, allStorage }) => {
           </ul>
         </section>
         <section className="recipe-info">
-          Instructions:
+          <h4>Instructions:</h4>
           <p>{result.strInstructions}</p>
         </section>
       </Modal>
