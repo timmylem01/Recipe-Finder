@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from './pages/Layout';
-import Home from './pages/Home';
-import Bookmarks from './pages/Bookmarks';
-import ErrorPage from './pages/ErrorPage';
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Bookmarks from "./pages/Bookmarks";
+import ErrorPage from "./pages/ErrorPage";
 // import App from './App';
 
 export default function App() {
@@ -18,8 +18,8 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
