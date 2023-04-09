@@ -29,8 +29,9 @@ const Card = ({ result, displayDelete, setBookmark, allStorage }) => {
       ingredients.push(`${result[key]}`);
     }
   }
-
+  // This measurements array stores each recipes' measurements for the modal to display
   const measurements = [];
+  // Iterate through each key in result to find all keys that start with "strMeasure" to create a list of all measurements
   for (const key in result) {
     if (
       key.includes("strMeasure") &&
