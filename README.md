@@ -7,5 +7,6 @@ You can also bookmark recipes you like and they will be saved in the bookmarks p
 
 How to Install and Run the App:
 - Clone the repository onto your computer
+- cd into "my-app"
 - run "npm install" in your terminal 
 - run "npm start" and navigate to "http://localhost:3000/"
