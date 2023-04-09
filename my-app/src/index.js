@@ -9,11 +9,15 @@ import ErrorPage from "./pages/ErrorPage";
 
 export default function App() {
   return (
+    // Used React Router library to create a single-page application, reduce page reloads for a better user experience, and organized file structure
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* when user navigates to the "/" path, Home component will be rendered by default */}
           <Route index element={<Home />} />
+          {/* when user navigatges to "/bookmarks" path, Bookmarks component will be rendered */}
           <Route path="bookmarks" element={<Bookmarks />} />
+          {/* when user navigates to any other paths, an error will display */}
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

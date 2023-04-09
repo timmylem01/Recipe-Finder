@@ -1,9 +1,10 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 
-import "./Layout.css"
+import "./Layout.css";
 
 const Layout = () => {
+  // This component is acting as my Nav bar for users to switch between the home page and bookmarks page
   return (
     <>
       <nav>
@@ -19,7 +20,7 @@ const Layout = () => {
 
       <Outlet />
     </>
-  )
-}
+  );
+};
 
 export default Layout;

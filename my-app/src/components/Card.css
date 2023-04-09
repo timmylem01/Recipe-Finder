@@ -31,6 +31,14 @@
   max-height: 22em;
 }
 
+.recipe-info-sbs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  max-height: 22em;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
