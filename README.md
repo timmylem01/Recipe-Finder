@@ -1,4 +1,4 @@
-# Timmy-s-Take-Home
+# Reciper Finder
 Full Stack - React Focused Project
 
 A simple React App that utilizes a free API to search for recipes using key words.
